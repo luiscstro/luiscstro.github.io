@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfólio Luis Castro</title>
+<meta name="description" content="Luis Felipe Castro, desenvolvedor full stack e estudante de Engenharia de Software em São Luís. Membro da Software House UNDB e diretor de extensão da Liga Acadêmica de Segurança e Tecnologias Emergentes.">
+<meta name="theme-color" content="#0A0E22">
+<meta property="og:title" content="Luis Felipe Castro">
+<meta property="og:description" content="Sites e sistemas para empresas e pessoas, feitos em São Luís.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F4F6FB'/%3E%3Cg fill='%232C4BDB'%3E%3Ccircle cx='16' cy='16' r='3.6'/%3E%3Cpath d='M16 3c3 5 3 8.5 0 13-3-4.5-3-8 0-13zM16 29c3-5 3-8.5 0-13-3 4.5-3 8 0 13zM3 16c5-3 8.5-3 13 0-4.5 3-8 3-13 0zM29 16c-5-3-8.5-3-13 0 4.5 3 8 3 13 0z'/%3E%3Cpath d='M0 0h7a7 7 0 0 1-7 7zM32 0v7a7 7 0 0 1-7-7zM0 32v-7a7 7 0 0 1 7 7zM32 32h-7a7 7 0 0 1 7-7z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&family=Literata:ital,opsz,wght@0,7..72,300..800;1,7..72,300..600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topbar" id="topbar" data-on="dark">
+  <a class="brand" href="#inicio" aria-label="Luis Castro, voltar ao início">
+    <span class="brand-tile" aria-hidden="true"></span>
+    <span class="brand-name">Luis Castro</span>
+  </a>
+  <nav class="topnav" aria-label="Seções">
+    <a href="#projetos">Projetos</a>
+    <a href="#sites">Sites</a>
+    <a href="#sobre">Sobre</a>
+    <a class="topnav-cta" href="#contato">Contato</a>
+  </nav>
+  <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="menu">
+    <span class="menu-btn-label">Menu</span>
+    <span class="menu-btn-icon" aria-hidden="true"><i></i><i></i></span>
+  </button>
+</header>
+
+<main id="conteudo">
+
+  <!-- Início -->
+  <section id="inicio" class="hero band band-dark" data-band="dark">
+    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="hero-intro">Desenvolvedor Full Stack em São Luís, Maranhão</p>
+      <h1 class="hero-name" id="hero-name" aria-label="Luis Felipe Castro">
+        <span class="hero-line" aria-hidden="true">Luis Felipe</span>
+        <span class="hero-line" aria-hidden="true">Castro</span>
+      </h1>
+      <p class="hero-lede">Estudo Engenharia de Software na UNDB e crio sites e sistemas para empresas e pessoas, do primeiro rascunho até estarem funcionando.</p>
+      <ul class="hero-roles">
+        <li><span class="role-org">Software House UNDB</span><span class="role-what">Membro do escritório escola, na equipe que desenvolve o sistema de estágios da SES</span></li>
+        <li><span class="role-org">Liga Acadêmica de Segurança e Tecnologias Emergentes</span><span class="role-what">Diretor de extensão</span></li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+        <a class="btn btn-ghost" href="https://wa.me/5598985206006" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="work" data-band="dark">
+    <div class="work-pin" id="work-pin">
+      <div class="work-progress" aria-hidden="true"><span id="work-progress-bar"></span></div>
+      <div class="work-track" id="work-track">
+
+        <article class="panel panel-intro band-dark">
+          <div class="panel-intro-inner">
+            <h2 class="work-title">Projetos</h2>
+            <p class="work-lede">Sistemas que criei do zero e que estão funcionando. Clique em qualquer um para ver os detalhes.</p>
+            <ul class="work-index">
+              <li><a href="#p-licittracker">LicitTracker</a></li>
+              <li><a href="#p-versailles">Versailles</a></li>
+              <li><a href="#p-gymlegends">GymLegends</a></li>
+              <li><a href="#p-gastos">Controle de Gastos</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel theme-licit" id="p-licittracker">
+          <div class="panel-text">
+            <p class="panel-tag">Projeto próprio</p>
+            <h3 class="panel-name">LicitTracker</h3>
+            <p class="panel-tagline">Encontra as licitações certas para cada empresa</p>
+            <p class="panel-desc">Licitações são as compras feitas por prefeituras e órgãos públicos, e o governo publica novas o tempo todo. O LicitTracker lê essas publicações sozinho e mostra para cada empresa só as que combinam com o que ela vende. A equipe acompanha cada oportunidade num quadro, guarda os documentos e recebe um resumo diário por email.</p>
+            <p class="panel-tech">Feito com Python, FastAPI e React. <a href="https://github.com/luiscstro/licitacao-search" target="_blank" rel="noopener">Ver o código</a></p>
+            <div class="panel-links">
+              <a class="btn btn-sm btn-solid" href="https://licittracker-frontend.onrender.com" target="_blank" rel="noopener">Abrir o sistema</a>
+              <button class="btn btn-sm btn-outline" type="button" data-case="licittracker">Ver detalhes</button>
+            </div>
+          </div>
+          <div class="panel-stage">
+            <div class="browser" data-depth="0.12">
+              <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="browser-view screens" data-screens>
+                <img class="screen is-active" src="assets/img/licit-dashboard.webp" width="1600" height="1000" alt="Tela do LicitTracker com licitações reais, cada uma com uma nota de relevância, cidade, valor estimado e prazo" loading="lazy" decoding="async">
+                <img class="screen" src="assets/img/licit-pipeline.webp" width="1600" height="1000" alt="Quadro da equipe com as colunas acompanhando, analisando, proposta enviada e ganhou" loading="lazy" decoding="async">
+                <img class="screen" src="assets/img/licit-indicadores.webp" width="1600" height="1000" alt="Gráficos com licitações por estado, por tipo e por mês de encerramento" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="screen-tabs" role="tablist" aria-label="Telas do LicitTracker">
+              <button role="tab" aria-selected="true" type="button">Licitações</button>
+              <button role="tab" aria-selected="false" type="button">Quadro da equipe</button>
+              <button role="tab" aria-selected="false" type="button">Gráficos</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel theme-versailles" id="p-versailles">
+          <div class="panel-text">
+            <p class="panel-tag">Projeto para cliente</p>
+            <h3 class="panel-name">Versailles</h3>
+            <p class="panel-tagline">Ajuda uma marca a crescer no Instagram</p>
+            <p class="panel-desc">Um painel onde a marca agenda fotos, Reels e Stories, reposta quem a marca em publicações e responde sozinha quem comenta ou manda mensagem. Também encontra posts certos para a marca interagir. Tudo funciona pelo caminho oficial do Instagram, sem pedir a senha da conta e sem risco de bloqueio.</p>
+            <p class="panel-tech">Feito com Next.js e PostgreSQL.</p>
+            <div class="panel-links">
+              <button class="btn btn-sm btn-solid" type="button" data-case="versailles">Ver detalhes</button>
+            </div>
+          </div>
+          <div class="panel-stage">
+            <figure class="arch" data-depth="0.1">
+              <svg class="arch-wide" viewBox="0 0 640 440" role="img" aria-labelledby="arch-title arch-desc">
+                <title id="arch-title">Como o painel Versailles funciona</title>
+                <desc id="arch-desc">A marca agenda as publicações no painel. Um robô publica no Instagram na hora certa. Comentários e mensagens voltam para o painel, que responde e guarda tudo.</desc>
+                <defs>
+                  <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="var(--v-line)"/></marker>
+                </defs>
+                <g fill="none" stroke="var(--v-line)" stroke-width="1.6">
+                  <path d="M206 104 H 300" marker-end="url(#ah)"/>
+                  <path d="M410 104 H 468" marker-end="url(#ah)"/>
+                  <path d="M532 140 V 236" marker-end="url(#ah)"/>
+                  <path d="M468 290 H 206" marker-end="url(#ah)" stroke-dasharray="5 6"/>
+                  <path d="M123 140 V 236" marker-end="url(#ah)"/>
+                </g>
+                <g>
+                  <rect x="40" y="68" width="166" height="72" rx="10" fill="var(--v-card)" stroke="var(--v-accent)"/><text x="123" y="100" text-anchor="middle" class="t1">Painel</text><text x="123" y="122" text-anchor="middle" class="t2">agenda e acompanha</text>
+                  <rect x="300" y="68" width="110" height="72" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="355" y="100" text-anchor="middle" class="t1">Agenda</text><text x="355" y="122" text-anchor="middle" class="t2">fila de posts</text>
+                  <rect x="468" y="68" width="132" height="72" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="534" y="100" text-anchor="middle" class="t1">Robô</text><text x="534" y="122" text-anchor="middle" class="t2">trabalha sozinho</text>
+                  <rect x="468" y="236" width="132" height="108" rx="10" fill="var(--v-accent)"/><text x="534" y="280" text-anchor="middle" class="t1 t-ink">Instagram</text><text x="534" y="303" text-anchor="middle" class="t2 t-ink">caminho oficial</text>
+                  <rect x="40" y="236" width="166" height="108" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="123" y="278" text-anchor="middle" class="t1">Arquivo</text><text x="123" y="301" text-anchor="middle" class="t2">posts, regras</text><text x="123" y="320" text-anchor="middle" class="t2">e seguidores</text>
+                </g>
+                <g>
+                  <text x="253" y="94" text-anchor="middle" class="t3">agenda</text>
+                  <text x="439" y="94" text-anchor="middle" class="t3">entrega</text>
+                  <text x="544" y="192" class="t3">publica na hora certa</text>
+                  <text x="337" y="281" text-anchor="middle" class="t3">comentários e mensagens voltam</text>
+                  <text x="133" y="192" class="t3">guarda</text>
+                </g>
+                <g aria-hidden="true"><circle r="4.5" class="pk pk1"/><circle r="4.5" class="pk pk2"/><circle r="4.5" class="pk pk3"/><circle r="4.5" class="pk pk4"/></g>
+              </svg>
+              <svg class="arch-tall" viewBox="0 0 360 500" role="img" aria-labelledby="arch-title-m arch-desc-m">
+                <title id="arch-title-m">Como o painel Versailles funciona</title>
+                <desc id="arch-desc-m">A marca agenda as publicações no painel. Um robô publica no Instagram na hora certa. Comentários e mensagens voltam para o painel, que responde e guarda tudo.</desc>
+                <defs><marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="var(--v-line)"/></marker></defs>
+                <g fill="none" stroke="var(--v-line)" stroke-width="1.6">
+                  <path d="M196 49 H 234" marker-end="url(#ahm)"/>
+                  <path d="M106 82 V 134" marker-end="url(#ahm)"/>
+                  <path d="M106 202 V 254" marker-end="url(#ahm)"/>
+                  <path d="M106 322 V 374" marker-end="url(#ahm)"/>
+                  <path d="M196 420 H 300 V 128 H 150 V 86" marker-end="url(#ahm)" stroke-dasharray="5 6"/>
+                </g>
+                <g>
+                  <rect x="16" y="16" width="180" height="66" rx="10" fill="var(--v-card)" stroke="var(--v-accent)"/><text x="106" y="45" text-anchor="middle" class="t1">Painel</text><text x="106" y="66" text-anchor="middle" class="t2">a marca agenda</text>
+                  <rect x="236" y="16" width="110" height="96" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="291" y="50" text-anchor="middle" class="t1">Arquivo</text><text x="291" y="72" text-anchor="middle" class="t2">posts, regras</text><text x="291" y="90" text-anchor="middle" class="t2">e seguidores</text>
+                  <rect x="16" y="136" width="180" height="66" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="106" y="165" text-anchor="middle" class="t1">Agenda</text><text x="106" y="186" text-anchor="middle" class="t2">fila de posts</text>
+                  <rect x="16" y="256" width="180" height="66" rx="10" fill="var(--v-card)" stroke="var(--v-line)"/><text x="106" y="285" text-anchor="middle" class="t1">Robô</text><text x="106" y="306" text-anchor="middle" class="t2">trabalha sozinho</text>
+                  <rect x="16" y="376" width="180" height="90" rx="10" fill="var(--v-accent)"/><text x="106" y="415" text-anchor="middle" class="t1 t-ink">Instagram</text><text x="106" y="438" text-anchor="middle" class="t2 t-ink">caminho oficial</text>
+                </g>
+                <g>
+                  <text x="215" y="40" text-anchor="middle" class="t3">guarda</text>
+                  <text x="116" y="112" class="t3">agenda</text>
+                  <text x="116" y="232" class="t3">entrega</text>
+                  <text x="116" y="352" class="t3">publica na hora certa</text>
+                  <text x="314" y="275" text-anchor="middle" class="t3" transform="rotate(-90 314 275)">comentários e mensagens voltam</text>
+                </g>
+                <g aria-hidden="true"><circle r="4.5" class="pk pm1"/><circle r="4.5" class="pk pm2"/><circle r="4.5" class="pk pm3"/><circle r="4.5" class="pk pm4"/></g>
+              </svg>
+              <figcaption class="arch-caption">
+                <span>Agenda posts</span><span>Reposta quem marca</span><span>Recebe quem escreve</span><span>Responde comentários</span><span>Encontra posts para interagir</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="panel theme-gym" id="p-gymlegends">
+          <div class="panel-text">
+            <p class="panel-tag">Projeto próprio</p>
+            <h3 class="panel-name">GymLegends</h3>
+            <p class="panel-tagline">Aplicativo de treino para a academia</p>
+            <p class="panel-desc">Mostra o treino do dia, guarda o peso e as repetições de cada série e lembra o que você fez da última vez. Depois de cada série, um cronômetro marca o descanso, e um gráfico mostra a sua evolução ao longo das semanas. Funciona até sem internet e pode ser instalado no celular como um aplicativo comum.</p>
+            <p class="panel-tech">Feito com React. <a href="https://github.com/luiscstro/gymlegends-local" target="_blank" rel="noopener">Ver o código</a></p>
+            <div class="panel-links">
+              <a class="btn btn-sm btn-solid" href="https://luiscstro.github.io/gymlegends-local/" target="_blank" rel="noopener">Usar agora</a>
+              <button class="btn btn-sm btn-outline" type="button" data-case="gymlegends">Ver detalhes</button>
+            </div>
+          </div>
+          <div class="panel-stage stage-phones">
+            <div class="phone" data-depth="0.2"><img src="assets/img/gym-today.webp" width="780" height="1688" alt="Tela Hoje do GymLegends com o treino de peito e tríceps e o botão para iniciar" loading="lazy" decoding="async"></div>
+            <div class="phone phone-front" data-depth="0.05"><img src="assets/img/gym-session.webp" width="780" height="1688" alt="Treino em andamento com as séries confirmadas e o cronômetro de descanso" loading="lazy" decoding="async"></div>
+            <div class="phone" data-depth="0.28"><img src="assets/img/gym-chart.webp" width="780" height="1688" alt="Gráfico com a evolução do peso no supino ao longo de dez semanas" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+
+        <article class="panel theme-gastos" id="p-gastos">
+          <div class="panel-text">
+            <p class="panel-tag">Projeto próprio</p>
+            <h3 class="panel-name">Controle de Gastos</h3>
+            <p class="panel-tagline">Avisa antes de uma conta vencer</p>
+            <p class="panel-desc">Organiza receitas, despesas e contas a pagar num aplicativo que fica no celular. Avisa antes do vencimento, no dia e quando alguma conta atrasa, conta quantas parcelas faltam e coloca cada vencimento no Google Agenda com alarme.</p>
+            <p class="panel-tech">Feito com React e Node.js.</p>
+            <div class="panel-links">
+              <a class="btn btn-sm btn-solid" href="https://controle-gastos-pessoal-kappa.vercel.app" target="_blank" rel="noopener">Abrir o aplicativo</a>
+              <button class="btn btn-sm btn-outline" type="button" data-case="gastos">Ver detalhes</button>
+            </div>
+          </div>
+          <div class="panel-stage stage-combo">
+            <div class="browser" data-depth="0.1">
+              <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="browser-view"><img src="assets/img/gastos-dash.webp" width="1600" height="1000" alt="Controle de Gastos no computador com os próximos vencimentos, o resumo do mês e um gráfico dos últimos meses" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="phone phone-float" data-depth="0.26"><img src="assets/img/gastos-contas-m.webp" width="780" height="1688" alt="Tela de contas no celular com o valor que falta pagar no mês e as contas que vencem em breve" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sites para empresas -->
+  <section id="sites" class="facades band band-light" data-band="light">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title">Sites para empresas</h2>
+        <p class="section-lede">Sites que fiz como freelancer para empresas e instituições. São rápidos, funcionam bem no celular e já vêm com o aviso de cookies que a LGPD pede.</p>
+      </header>
+
+      <article class="facade" id="f-hebrom">
+        <div class="facade-info">
+          <p class="facade-status"><span class="live-dot" aria-hidden="true"></span>No ar</p>
+          <h3 class="facade-name">Instituto Hebrom</h3>
+          <p class="facade-desc">ONG de São Luís que atua com assistência social, educação, esporte e cultura.</p>
+          <ul class="facade-list">
+            <li>Páginas de projetos, notícias e prestação de contas</li>
+            <li>Formulário de contato que chega direto no email do instituto</li>
+            <li>Uma seção para quem quer apoiar o trabalho da ONG</li>
+          </ul>
+          <a class="link-arrow" href="https://institutohebrom.com.br" target="_blank" rel="noopener">Visitar o site</a>
+        </div>
+        <div class="facade-stage">
+          <div class="browser browser-tall facade-pc">
+            <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="browser-view facade-view"><div class="facade-shot" data-w="1440" data-h="5844" role="img" aria-label="Página inicial completa do site do Instituto Hebrom"><img src="assets/img/hebrom-pc-1.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-pc-2.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-pc-3.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-pc-4.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-pc-5.webp" width="1440" height="1044" alt="" loading="lazy" decoding="async"></div></div>
+          </div>
+          <div class="phone phone-corner facade-pc"><img src="assets/img/hebrom-m.webp" width="780" height="1688" alt="Site do Instituto Hebrom no celular" loading="lazy" decoding="async"></div>
+          <div class="phone phone-scroll facade-cel"><div class="phone-view"><div class="facade-shot" data-w="780" data-h="7348" role="img" aria-label="Site do Instituto Hebrom no celular"><img src="assets/img/hebrom-cel-1.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-cel-2.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-cel-3.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-cel-4.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-cel-5.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/hebrom-cel-6.webp" width="780" height="1348" alt="" loading="lazy" decoding="async"></div></div></div>
+        </div>
+      </article>
+
+      <article class="facade" id="f-castelucci">
+        <div class="facade-info">
+          <p class="facade-status"><span class="live-dot" aria-hidden="true"></span>No ar</p>
+          <h3 class="facade-name">Castelucci Serviços</h3>
+          <p class="facade-desc">Empresa que fornece equipes de limpeza, portaria e recepção para órgãos públicos e empresas.</p>
+          <ul class="facade-list">
+            <li>Identidade visual própria em todas as páginas</li>
+            <li>Uma página só para o atendimento a órgãos públicos</li>
+            <li>Textos e formulário revisados para cumprir a LGPD</li>
+          </ul>
+          <a class="link-arrow" href="https://www.castelucciservicos.com" target="_blank" rel="noopener">Visitar o site</a>
+        </div>
+        <div class="facade-stage">
+          <div class="browser browser-tall facade-pc">
+            <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="browser-view facade-view"><div class="facade-shot" data-w="1440" data-h="7741" role="img" aria-label="Página inicial completa do site da Castelucci Serviços"><img src="assets/img/castelucci-pc-1.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-2.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-3.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-4.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-5.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-6.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-pc-7.webp" width="1440" height="541" alt="" loading="lazy" decoding="async"></div></div>
+          </div>
+          <div class="phone phone-corner facade-pc"><img src="assets/img/castelucci-m.webp" width="780" height="1688" alt="Site da Castelucci Serviços no celular" loading="lazy" decoding="async"></div>
+          <div class="phone phone-scroll facade-cel"><div class="phone-view"><div class="facade-shot" data-w="780" data-h="8772" role="img" aria-label="Site da Castelucci Serviços no celular"><img src="assets/img/castelucci-cel-1.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-2.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-3.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-4.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-5.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-6.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-7.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/castelucci-cel-8.webp" width="780" height="372" alt="" loading="lazy" decoding="async"></div></div></div>
+        </div>
+      </article>
+
+      <article class="facade" id="f-canaa">
+        <div class="facade-info">
+          <p class="facade-status"><span class="live-dot is-wait" aria-hidden="true"></span>Em preparação</p>
+          <h3 class="facade-name">Canaã Facilities</h3>
+          <p class="facade-desc">Empresa de limpeza, portaria, recepção e manutenção predial no Maranhão e no Piauí.</p>
+          <ul class="facade-list">
+            <li>Dezoito páginas, entre serviços, notícias, vagas e documentos</li>
+            <li>Fácil de atualizar: cada serviço é escrito uma vez e vira uma página completa</li>
+            <li>Letras grandes e boas cores para qualquer pessoa ler com conforto</li>
+          </ul>
+          <p class="facade-note">O site está pronto e aguarda os textos e as fotos da empresa.</p>
+        </div>
+        <div class="facade-stage">
+          <div class="browser browser-tall facade-pc">
+            <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="browser-view facade-view"><div class="facade-shot" data-w="1440" data-h="7609" role="img" aria-label="Página inicial completa do site da Canaã Facilities, ainda com conteúdo provisório"><img src="assets/img/canaa-pc-1.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-2.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-3.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-4.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-5.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-6.webp" width="1440" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-pc-7.webp" width="1440" height="409" alt="" loading="lazy" decoding="async"></div></div>
+          </div>
+          <div class="phone phone-corner facade-pc"><img src="assets/img/canaa-m.webp" width="780" height="1688" alt="Site da Canaã Facilities no celular" loading="lazy" decoding="async"></div>
+          <div class="phone phone-scroll facade-cel"><div class="phone-view"><div class="facade-shot" data-w="780" data-h="7656" role="img" aria-label="Site da Canaã Facilities no celular, ainda com conteúdo provisório"><img src="assets/img/canaa-cel-1.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-2.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-3.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-4.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-5.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-6.webp" width="780" height="1200" alt="" loading="lazy" decoding="async"><img src="assets/img/canaa-cel-7.webp" width="780" height="456" alt="" loading="lazy" decoding="async"></div></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Outros projetos -->
+  <section id="outros" class="lab band band-dark" data-band="dark">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title">Outros projetos</h2>
+        <p class="section-lede">Ferramentas menores e trabalhos da faculdade. Os dois primeiros dá para testar aqui mesmo.</p>
+      </header>
+      <div class="lab-grid">
+
+        <article class="lab-card lab-wide" id="demo-bot">
+          <div class="lab-copy">
+            <h3 class="lab-title">Robô de licitações no WhatsApp</h3>
+            <p>Um robô que responde no WhatsApp quando alguém pede licitações sobre um assunto. Foi o primeiro passo do que depois virou o LicitTracker.</p>
+            <p class="lab-try">Experimente: escreva <b>buscar</b> e um assunto, como merenda ou uniforme.</p>
+            <a class="link-arrow" href="https://github.com/luiscstro/licitacao-system-api" target="_blank" rel="noopener">Ver o código</a>
+          </div>
+          <div class="chat" aria-label="Demonstração do robô de licitações">
+            <div class="chat-head"><span class="chat-avatar" aria-hidden="true"></span><div><p class="chat-name">Robô de licitações</p><p class="chat-status">online</p></div></div>
+            <div class="chat-log" id="chat-log" role="log" aria-live="polite" data-lenis-prevent>
+              <p class="msg msg-bot">Oi! Escreva <b>buscar</b> e um assunto que eu procuro licitações abertas.</p>
+              <p class="msg msg-me">buscar limpeza</p>
+              <div class="msg msg-bot" id="chat-first">Procurando…</div>
+            </div>
+            <div class="chat-suggest" id="chat-suggest">
+              <button type="button">buscar merenda</button><button type="button">buscar software</button><button type="button">buscar uniforme</button><button type="button">buscar combustível</button>
+            </div>
+            <form class="chat-form" id="chat-form" autocomplete="off">
+              <label class="sr-only" for="chat-input">Mensagem para o robô</label>
+              <input id="chat-input" name="q" type="text" placeholder="buscar medicamento" maxlength="60">
+              <button type="submit" aria-label="Enviar mensagem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6l-6 6"/></svg></button>
+            </form>
+            <p class="chat-note">As respostas usam licitações reais publicadas pelo governo.</p>
+          </div>
+        </article>
+
+        <article class="lab-card lab-wide" id="demo-conv">
+          <div class="lab-copy">
+            <h3 class="lab-title">Conversor de vídeos</h3>
+            <p>Programa que converte uma pasta inteira de vídeos no formato MOV, comum em iPhones e câmeras, para MP4, que abre em qualquer lugar. Quando dá, faz isso em segundos e sem perder qualidade. Quando não dá, refaz o vídeo sozinho.</p>
+            <p class="lab-try">Experimente: clique em converter e veja o que acontece com cada vídeo.</p>
+            <a class="link-arrow" href="https://github.com/luiscstro/conversor_mov_mp4" target="_blank" rel="noopener">Ver o código</a>
+          </div>
+          <div class="conv" aria-label="Demonstração do conversor">
+            <div class="conv-bar"><span>Conversor de vídeos</span><span class="conv-win" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="conv-body">
+              <ul class="conv-files" id="conv-files">
+                <li data-size="1.2" data-mode="copy"><span class="f-name">ferias_ilha.MOV</span><span class="f-size">1,2 GB</span><span class="f-bar"><i></i></span><span class="f-state">na fila</span></li>
+                <li data-size="0.38" data-mode="copy"><span class="f-name">reels_cliente.MOV</span><span class="f-size">380 MB</span><span class="f-bar"><i></i></span><span class="f-state">na fila</span></li>
+                <li data-size="0.86" data-mode="encode"><span class="f-name">drone_lencois.MOV</span><span class="f-size">860 MB</span><span class="f-bar"><i></i></span><span class="f-state">na fila</span></li>
+                <li data-size="2.4" data-mode="copy"><span class="f-name">apresentacao.MOV</span><span class="f-size">2,4 GB</span><span class="f-bar"><i></i></span><span class="f-state">na fila</span></li>
+              </ul>
+              <div class="conv-controls">
+                <label class="switch"><input type="checkbox" id="conv-fast" checked><span class="switch-ui" aria-hidden="true"></span>Modo rápido</label>
+                <button class="btn btn-sm btn-ink" type="button" id="conv-run">Converter tudo</button>
+              </div>
+              <p class="conv-log" id="conv-log" role="status" aria-live="polite">Quatro vídeos prontos para converter.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="lab-card">
+          <figure class="lab-shot"><img src="assets/img/amconsultoria.webp" width="1600" height="1000" alt="Protótipo do sistema da AM Consultoria com clientes, compromissos, pendências e resumo financeiro" loading="lazy" decoding="async"></figure>
+          <h3 class="lab-title">AM Consultoria</h3>
+          <p>Trabalho da faculdade feito em grupo. Criamos o banco de dados e um protótipo de sistema para uma consultoria que atende instituições de cuidado, como centros de atenção psicossocial e casas de idosos. O que antes ficava em cadernos e no WhatsApp passou a ficar organizado num só lugar.</p>
+          <a class="link-arrow" href="https://github.com/luiscstro/pjbl-amconsultoria" target="_blank" rel="noopener">Ver o código</a>
+        </article>
+
+        <article class="lab-card">
+          <div class="bike-art" aria-hidden="true"><canvas id="bike-canvas"></canvas></div>
+          <h3 class="lab-title">Bike Ilha Club</h3>
+          <p>Projeto da faculdade: um aplicativo que reúne as locadoras de bicicleta de São Luís. A pessoa encontra a locadora mais perto, escolhe a bicicleta e faz a reserva sem risco de outra pessoa pegar a mesma no mesmo horário.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="about band band-light" data-band="light">
+    <div class="cercadura" aria-hidden="true"></div>
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <figure class="tile-frame" id="photo-frame">
+          <img src="assets/img/luis.jpg" width="460" height="460" alt="Foto de Luis Felipe Castro, de óculos e camisa polo preta" decoding="async">
+        </figure>
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">Sobre mim</h2>
+        <p class="about-statement" id="about-statement">Sou maranhense, tenho 19 anos e estudo Engenharia de Software na UNDB. Ainda estou em formação, e cada projeto é uma chance de aprender e de entregar algo útil de verdade.</p>
+        <p class="about-body">Gosto de entender o problema antes de começar. Converso com quem vai usar, explico as escolhas sem termos técnicos e mostro o andamento durante o caminho. No fim, entrego algo simples de usar e explico como cuidar dele.</p>
+        <dl class="facts">
+          <div><dt>Hoje</dt><dd>Desenvolvedor full stack. Como freelancer, desde julho de 2026, fiz sites e sistemas para o Instituto Hebrom, a Castelucci Serviços, a Canaã Facilities e a Versailles.</dd></div>
+          <div><dt>Software House</dt><dd>Membro do escritório escola da UNDB, na equipe que desenvolve o sistema de estágios da SES.</dd></div>
+          <div><dt>Liga acadêmica</dt><dd>Diretor de extensão da Liga Acadêmica de Segurança e Tecnologias Emergentes.</dd></div>
+          <div><dt>Formação</dt><dd>Cursando Engenharia de Software no Centro Universitário UNDB, em São Luís.</dd></div>
+          <div><dt>Ferramentas</dt><dd>Trabalho principalmente com Python, JavaScript, React e PostgreSQL.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact band band-dark" data-band="dark">
+    <canvas class="contact-canvas" id="contact-canvas" aria-hidden="true"></canvas>
+    <div class="wrap contact-inner">
+      <h2 class="contact-title">Vamos conversar?</h2>
+      <p class="contact-lede">Me conte o que você precisa. Respondo mais rápido pelo WhatsApp.</p>
+      <ul class="contact-list">
+        <li><a class="c-row" href="https://wa.me/5598985206006" target="_blank" rel="noopener"><span class="c-label">WhatsApp</span><span class="c-value">+55 98 98520 6006</span><svg class="c-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="c-row" href="https://www.linkedin.com/in/luisfelipecastroo" target="_blank" rel="noopener"><span class="c-label">LinkedIn</span><span class="c-value">luisfelipecastroo</span><svg class="c-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="c-row" href="https://github.com/luiscstro" target="_blank" rel="noopener"><span class="c-label">GitHub</span><span class="c-value">luiscstro</span><svg class="c-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><div class="c-row c-row-static"><span class="c-label">Email</span><span class="c-value c-select">lf.cunhacastro@gmail.com</span><button class="c-copy" type="button" data-copy="lf.cunhacastro@gmail.com">Copiar</button></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer band-dark">
+  <div class="cercadura cercadura-dark" aria-hidden="true"></div>
+  <div class="wrap footer-inner">
+    <p>Feito em São Luís, Maranhão.</p>
+    <a class="link-arrow" href="#inicio">Voltar ao topo</a>
+  </div>
+</footer>
+
+<!-- Detalhes dos projetos -->
+<dialog class="case theme-licit" id="case-licittracker" aria-labelledby="case-licittracker-title">
+  <div class="case-scroll" data-lenis-prevent>
+    <button class="case-close" type="button" data-close aria-label="Fechar detalhes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <header class="case-head">
+      <p class="case-eyebrow">Projeto próprio</p>
+      <h2 id="case-licittracker-title">LicitTracker</h2>
+      <p class="case-lede">Um sistema que procura licitações para empresas, para que elas não percam oportunidades de vender para o governo.</p>
+      <div class="case-links"><a class="btn btn-sm btn-solid" href="https://licittracker-frontend.onrender.com" target="_blank" rel="noopener">Abrir o sistema</a><a class="btn btn-sm btn-outline" href="https://github.com/luiscstro/licitacao-search" target="_blank" rel="noopener">Ver o código</a></div>
+    </header>
+    <figure class="case-hero"><img data-src="assets/img/licit-dashboard.webp" width="1600" height="1000" alt="Tela de licitações do LicitTracker"></figure>
+    <div class="case-grid">
+      <section><h3>O problema</h3><p>Quem vende para prefeituras e órgãos públicos precisa acompanhar o portal de compras do governo. São muitas publicações, e a maioria não tem nada a ver com o negócio da empresa. Procurar uma por uma toma horas.</p></section>
+      <section><h3>O que o sistema faz</h3><ul>
+        <li>Lê as novas licitações todos os dias, sozinho</li>
+        <li>Dá uma nota para cada uma, de acordo com o que a empresa vende, onde atende e o valor que procura</li>
+        <li>Mostra um quadro com as oportunidades: acompanhando, analisando, proposta enviada, ganhou ou perdeu</li>
+        <li>Guarda os documentos da empresa e avisa quando algum está faltando</li>
+        <li>Manda um resumo diário por email e exporta tudo em planilha ou PDF</li>
+      </ul></section>
+      <section><h3>Por dentro</h3><p>A parte que lê e organiza as licitações foi feita em Python, e a tela em React. Testes automáticos conferem o sistema antes de cada atualização, e o login é protegido contra tentativas de invasão.</p></section>
+    </div>
+    <div class="case-gallery">
+      <button type="button" class="g-item" data-full="assets/img/licit-pipeline.webp"><img data-src="assets/img/licit-pipeline.webp" width="1600" height="1000" alt="Quadro com as oportunidades da equipe"></button>
+      <button type="button" class="g-item" data-full="assets/img/licit-indicadores.webp"><img data-src="assets/img/licit-indicadores.webp" width="1600" height="1000" alt="Gráficos por estado, tipo e mês"></button>
+      <button type="button" class="g-item" data-full="assets/img/licit-hub.webp"><img data-src="assets/img/licit-hub.webp" width="1440" height="900" alt="Tela inicial com as ferramentas do sistema"></button>
+      <button type="button" class="g-item" data-full="assets/img/licit-login.webp"><img data-src="assets/img/licit-login.webp" width="1600" height="1000" alt="Tela de entrada com a marca do LicitTracker"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case theme-versailles" id="case-versailles" aria-labelledby="case-versailles-title">
+  <div class="case-scroll" data-lenis-prevent>
+    <button class="case-close" type="button" data-close aria-label="Fechar detalhes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <header class="case-head">
+      <p class="case-eyebrow">Projeto para cliente</p>
+      <h2 id="case-versailles-title">Versailles</h2>
+      <p class="case-lede">Um painel para uma marca crescer no Instagram sem colocar a conta em risco.</p>
+    </header>
+    <div class="case-grid">
+      <section><h3>O problema</h3><p>Crescer no Instagram dá trabalho: postar no horário certo, agradecer quem marca a marca, responder quem comenta. Muitas ferramentas prometem fazer isso sozinhas, mas usam atalhos proibidos pelo Instagram e acabam bloqueando a conta.</p></section>
+      <section><h3>O que o painel faz</h3><ul>
+        <li>Agenda fotos, Reels e Stories e publica na hora marcada</li>
+        <li>Mostra quem marcou a conta e permite repostar com os créditos, depois de aprovar</li>
+        <li>Manda uma mensagem automática para quem escreve pela primeira vez</li>
+        <li>Responde sozinho quem comenta uma palavra combinada, como QUERO</li>
+        <li>Encontra posts de perfis e hashtags escolhidos para a marca interagir</li>
+        <li>Reúne os comentários num só lugar para responder rápido</li>
+      </ul></section>
+      <section><h3>Por dentro</h3><p>Funciona só pelo caminho oficial do Instagram, então ninguém precisa entregar a senha. Os dados de acesso ficam guardados com criptografia, e as publicações e respostas rodam sozinhas, nos horários certos. Foi feito com Next.js e PostgreSQL.</p></section>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case theme-gym" id="case-gymlegends" aria-labelledby="case-gymlegends-title">
+  <div class="case-scroll" data-lenis-prevent>
+    <button class="case-close" type="button" data-close aria-label="Fechar detalhes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <header class="case-head">
+      <p class="case-eyebrow">Projeto próprio</p>
+      <h2 id="case-gymlegends-title">GymLegends</h2>
+      <p class="case-lede">Um aplicativo para quem treina e quer lembrar o que fez da última vez, sem caderno e sem anúncios.</p>
+      <div class="case-links"><a class="btn btn-sm btn-solid" href="https://luiscstro.github.io/gymlegends-local/" target="_blank" rel="noopener">Usar agora</a><a class="btn btn-sm btn-outline" href="https://github.com/luiscstro/gymlegends-local" target="_blank" rel="noopener">Ver o código</a></div>
+    </header>
+    <div class="case-phones">
+      <img data-src="assets/img/gym-today.webp" width="780" height="1688" alt="Tela com o treino do dia">
+      <img data-src="assets/img/gym-session.webp" width="780" height="1688" alt="Treino em andamento com cronômetro de descanso">
+      <img data-src="assets/img/gym-chart.webp" width="780" height="1688" alt="Gráfico de evolução do peso">
+      <img data-src="assets/img/gym-history.webp" width="780" height="1688" alt="Histórico de treinos do mês">
+    </div>
+    <div class="case-grid">
+      <section><h3>O que ele faz</h3><ul>
+        <li>Monta a rotina da semana, com os treinos e os dias de cada um</li>
+        <li>Guarda o peso e as repetições de cada série</li>
+        <li>Mostra o que você fez da última vez, e um toque repete os valores</li>
+        <li>Marca o descanso com um cronômetro depois de cada série</li>
+        <li>Desenha um gráfico da evolução de cada exercício</li>
+        <li>Faz uma cópia de segurança para levar tudo para outro celular</li>
+      </ul></section>
+      <section><h3>Duas versões</h3><p>Uma versão tem login, e cada pessoa guarda os seus treinos na nuvem. A outra funciona sem conta: tudo fica salvo no próprio celular, sem servidor e sem custo nenhum.</p></section>
+      <section><h3>Por dentro</h3><p>Feito com React. Funciona sem internet e pode ser instalado na tela do celular como qualquer outro aplicativo.</p></section>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case theme-gastos" id="case-gastos" aria-labelledby="case-gastos-title">
+  <div class="case-scroll" data-lenis-prevent>
+    <button class="case-close" type="button" data-close aria-label="Fechar detalhes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <header class="case-head">
+      <p class="case-eyebrow">Projeto próprio</p>
+      <h2 id="case-gastos-title">Controle de Gastos</h2>
+      <p class="case-lede">Assinaturas, boletos e parcelas vencem em dias diferentes, e é fácil esquecer uma. Este aplicativo avisa antes.</p>
+      <div class="case-links"><a class="btn btn-sm btn-solid" href="https://controle-gastos-pessoal-kappa.vercel.app" target="_blank" rel="noopener">Abrir o aplicativo</a></div>
+    </header>
+    <div class="case-phones">
+      <img data-src="assets/img/gastos-dash-m.webp" width="780" height="1688" alt="Início com os próximos vencimentos e o resumo do mês">
+      <img data-src="assets/img/gastos-contas-m.webp" width="780" height="1688" alt="Contas a pagar, com as vencidas e as próximas">
+      <img data-src="assets/img/gastos-trans-m.webp" width="780" height="1688" alt="Lista de gastos e receitas do mês">
+    </div>
+    <div class="case-grid">
+      <section><h3>O que ele faz</h3><ul>
+        <li>Organiza receitas e despesas por categoria, com gráficos</li>
+        <li>Lista as contas a pagar e mostra quantas parcelas faltam</li>
+        <li>Avisa no celular antes do vencimento, no dia e quando atrasa</li>
+        <li>Coloca cada vencimento no Google Agenda, com alarme</li>
+        <li>Gera relatórios em planilha e PDF</li>
+      </ul></section>
+      <section><h3>Por dentro</h3><p>Feito com React e Node.js. Pode ser instalado no celular, tem tema claro e escuro e manda notificações como um aplicativo comum.</p></section>
+    </div>
+    <div class="case-gallery">
+      <button type="button" class="g-item" data-full="assets/img/gastos-dash.webp"><img data-src="assets/img/gastos-dash.webp" width="1600" height="1000" alt="Início no computador"></button>
+      <button type="button" class="g-item" data-full="assets/img/gastos-contas.webp"><img data-src="assets/img/gastos-contas.webp" width="1600" height="1000" alt="Contas no computador"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+  <button class="case-close" type="button" data-close aria-label="Fechar imagem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <img id="lightbox-img" alt="">
+</dialog>
+
+<!-- Menu do celular -->
+<div class="menu" id="menu" hidden>
+  <canvas class="menu-canvas" id="menu-canvas" aria-hidden="true"></canvas>
+  <nav class="menu-nav" aria-label="Menu principal">
+    <ul>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#sites">Sites para empresas</a></li>
+      <li><a href="#outros">Outros projetos</a></li>
+      <li><a href="#sobre">Sobre mim</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
