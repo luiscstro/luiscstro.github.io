@@ -495,7 +495,7 @@
       // A altura vem das dimensões da imagem, então funciona mesmo antes de as fatias carregarem
       const dist = () => Math.max(0, view.clientWidth * (+shot.dataset.h / +shot.dataset.w) - view.clientHeight);
       const isCel = !!shot.closest('.facade-cel');
-      let mode = '', linked = null, auto = null, visible = false;
+      let mode = '', linked = null, auto = null, visible = false, lastD = -1;
       const clear = () => {
         if (linked) { if (linked.scrollTrigger) linked.scrollTrigger.kill(); linked.kill(); linked = null; }
         if (auto) { auto.kill(); auto = null; }
@@ -509,8 +509,11 @@
           linked = gsap.fromTo(shot, { y: 0 }, { y: () => -dist(), ease: 'none', scrollTrigger: { trigger: facade, start: 'top 75%', end: 'bottom 35%', scrub: 0.8, invalidateOnRefresh: true } });
           return;
         }
-        clear(); mode = 'auto';
         const d = dist();
+        // No celular, a barra do navegador esconde e volta ao rolar a página e isso dispara um resize.
+        // Se a moldura continua do mesmo tamanho, o site segue de onde estava em vez de recomeçar do topo.
+        if (mode === 'auto' && auto && shown(shot) && Math.abs(d - lastD) < 2) return;
+        clear(); mode = 'auto'; lastD = d;
         if (!d || !shown(shot)) return;
         auto = gsap.timeline({ repeat: -1, paused: true, delay: 0.6 })
           .to(shot, { y: -d, duration: Math.max(8, d / 120), ease: 'sine.inOut' })
@@ -539,24 +542,47 @@
     // Os textos oficiais às vezes trazem travessões e hifens; aqui viram vírgulas e espaços
     const clean = (s) => String(s || '').replace(/\s*[—–]\s*/g, ', ').replace(/\s+-\s+/g, ', ').replace(/(\p{L})-(?=\p{L})/gu, '$1 ').replace(/·/g, ',');
     const search = (term) => { const t = norm(term).trim(); return t ? DATA.pncp.filter((p) => norm(p.objeto).includes(t) || norm(p.cidade).includes(t) || norm(p.uf) === t) : []; };
+    // Tira o nome da plataforma no começo do texto oficial e só põe em minúsculas o que veio todo em maiúsculas, para não apagar nomes próprios e siglas
+    const SIGLAS = /(^|[^\p{L}])(rp|epp|mei|epi|tic|ubs|upa|caps|samu|cnpj|pncp|srp|ltda|suv)(?![\p{L}])/gu;
+    const tidy = (s, cidade) => {
+      let t = clean(s).replace(/^\s*\[[^\]]*\]\s*[,:;]?\s*/, '').trim();
+      const letters = t.replace(/[^\p{L}]/gu, '');
+      if (letters && t.replace(/[^\p{Lu}]/gu, '').length / letters.length > 0.6) {
+        t = t.toLowerCase().replace(SIGLAS, (m, a, b) => a + b.toUpperCase());
+        const nome = String(cidade || '').trim();
+        if (nome) t = t.split(nome.toLowerCase()).join(nome);
+      }
+      return t.charAt(0).toUpperCase() + t.slice(1);
+    };
+    // Corta no fim de uma palavra inteira, nunca no meio dela
+    const shorten = (s, n = 140) => {
+      if (s.length <= n) return s;
+      const cut = s.slice(0, n), i = cut.lastIndexOf(' ');
+      let out = cut.slice(0, i > 60 ? i : n);
+      const open = out.lastIndexOf('(');
+      if (open > 60 && open > out.lastIndexOf(')')) out = out.slice(0, open);
+      return out.replace(/[\s,;:]+$/, '').replace(/(\s+(?:de|da|do|das|dos|e|em|para|por|com|a|o|as|os|no|na|nos|nas|ao|que|ou))+$/i, '').replace(/[\s,;:]+$/, '') + '…';
+    };
+    const isOpen = (p) => !p.encerra || new Date(p.encerra).getTime() >= Date.now();
     function reply(term) {
       const found = search(term);
       const el = document.createElement('div');
       el.className = 'msg msg-bot';
       if (!found.length) {
-        el.innerHTML = `Não achei licitações sobre “${esc(term)}” agora. Tente <b>limpeza</b>, <b>merenda</b>, <b>software</b> ou <b>uniforme</b>.`;
+        el.innerHTML = `Não encontrei licitações sobre “${esc(term)}” no momento. Tente <b>limpeza</b>, <b>merenda</b>, <b>software</b> ou <b>uniforme</b>.`;
         return el;
       }
-      const shown = found.slice().sort((a, b) => String(a.encerra).localeCompare(String(b.encerra))).slice(0, 3);
+      // As que ainda estão abertas vêm primeiro, da que encerra antes para a que encerra depois; as encerradas ficam por último
+      const byEnd = (a, b) => String(a.encerra).localeCompare(String(b.encerra));
+      const ordered = found.filter(isOpen).sort(byEnd).concat(found.filter((p) => !isOpen(p)).sort((a, b) => byEnd(b, a)));
+      const shown = ordered.slice(0, 3);
       const intro = found.length > 3
-        ? `Encontrei <b>${found.length}</b> licitações sobre “${esc(term)}”. Estas são as três que encerram primeiro:`
+        ? `Encontrei <b>${found.length}</b> licitações sobre “${esc(term)}”. ${shown.every(isOpen) ? 'Estas são as três que encerram primeiro:' : 'Estas são três delas:'}`
         : `Encontrei <b>${found.length}</b> ${found.length === 1 ? 'licitação' : 'licitações'} sobre “${esc(term)}”:`;
       el.innerHTML = intro + shown.map((p) => {
-        const full = clean(p.objeto);
-        let obj = full.length > 140 ? full.slice(0, 137).trimEnd() + '…' : full;
-        obj = obj.charAt(0) + obj.slice(1).toLowerCase();
+        const obj = shorten(tidy(p.objeto, clean(p.cidade)));
         const link = /^https:\/\/pncp\.gov\.br\//.test(p.link || '') ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">Ver o edital</a>` : '';
-        return `<div class="lic"><span class="lic-where">${esc(clean(p.cidade))}/${esc(p.uf || '')}</span><span class="lic-obj">${esc(obj)}</span><span class="lic-meta">Valor estimado de ${brl(p.valor)}</span><span class="lic-meta">Encerra em ${esc(when(p.encerra))}</span>${link}</div>`;
+        return `<div class="lic"><span class="lic-where">${esc(clean(p.cidade))}/${esc(p.uf || '')}</span><span class="lic-obj">${esc(obj)}</span><span class="lic-meta">Valor estimado de ${brl(p.valor)}</span><span class="lic-meta">${isOpen(p) ? 'Encerra' : 'Encerrou'} em ${esc(when(p.encerra))}</span>${link}</div>`;
       }).join('');
       return el;
     }
@@ -573,7 +599,7 @@
       const term = text.replace(/^\s*buscar\s*/i, '');
       setTimeout(() => {
         typing.remove();
-        if (!term) { const m = document.createElement('p'); m.className = 'msg msg-bot'; m.innerHTML = 'Escreva <b>buscar</b> e um assunto. Por exemplo: buscar merenda'; log.appendChild(m); }
+        if (!term) { const m = document.createElement('p'); m.className = 'msg msg-bot'; m.innerHTML = 'Escreva <b>buscar</b> e um assunto. Por exemplo: buscar merenda.'; log.appendChild(m); }
         else log.appendChild(reply(term));
         log.scrollTop = log.scrollHeight; busy = false;
       }, reduced ? 50 : 650);
@@ -625,7 +651,7 @@
         li.classList.add('is-done'); state.textContent = 'pronto';
         await wait(160 * speed);
       }
-      say('Pronto! Os quatro vídeos estão em MP4, na pasta convertidos.');
+      say('Pronto! Os quatro vídeos estão em MP4, na pasta “convertidos”.');
       run.disabled = false; run.textContent = 'Converter de novo'; running = false;
     });
   })();
@@ -797,7 +823,7 @@
     const fallback = () => {
       const target = b.parentElement.querySelector('.c-select');
       if (target) { const range = document.createRange(); range.selectNodeContents(target); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); }
-      toast('Email selecionado. Use Ctrl+C para copiar');
+      toast('Email selecionado. Use Ctrl+C para copiar.');
     };
     try {
       navigator.clipboard.writeText(text).then(() => { toast('Email copiado'); b.textContent = 'Copiado'; setTimeout(() => { b.textContent = 'Copiar'; }, 2000); }, fallback);
