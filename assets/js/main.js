@@ -423,7 +423,7 @@
   if (motion && work && track) {
     const mm = gsap.matchMedia();
     // A trilha horizontal só liga em telas de altura normal; numa janela gigante (visualizador que rola por fora) os projetos ficam empilhados
-    mm.add('(min-width: 1100px) and (min-height: 620px) and (max-height: 1600px)', () => {
+    mm.add('(min-width: 1100px) and (min-height: 580px) and (max-height: 1600px)', () => {
       work.classList.add('is-horizontal');
       const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
       const bar = $('#work-progress-bar');
@@ -455,7 +455,7 @@
       });
       return () => { work.classList.remove('is-horizontal'); workST = null; workPanelBand = null; gsap.set(track, { clearProps: 'transform' }); };
     });
-    mm.add('(max-width: 1099px), (max-height: 619px), (min-height: 1601px)', () => {
+    mm.add('(max-width: 1099px), (max-height: 579px), (min-height: 1601px)', () => {
       $$('.panel-stage', track).forEach((el) => gsap.fromTo(el, { y: 70 }, { y: -20, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }));
     });
   }
