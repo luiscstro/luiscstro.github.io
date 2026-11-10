@@ -503,10 +503,10 @@
       };
       // Escolhe o modo de novo sempre que a janela muda: acompanhar a rolagem ou rolar sozinho
       const setup = () => {
-        if (!isCel && finePointer && pageScrolls()) {
+        if (pageScrolls()) {
           if (mode === 'linked') return;
           clear(); mode = 'linked';
-          linked = gsap.fromTo(shot, { y: 0 }, { y: () => -dist(), ease: 'none', scrollTrigger: { trigger: facade, start: 'top 75%', end: 'bottom 35%', scrub: 0.8, invalidateOnRefresh: true } });
+          linked = gsap.fromTo(shot, { y: 0 }, { y: () => -dist(), ease: 'none', scrollTrigger: { trigger: isCel ? view : facade, start: isCel ? 'top 90%' : 'top 75%', end: isCel ? 'bottom 20%' : 'bottom 35%', scrub: 0.8, invalidateOnRefresh: true } });
           return;
         }
         const d = dist();
